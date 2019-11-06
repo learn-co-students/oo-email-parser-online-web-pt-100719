@@ -8,14 +8,8 @@ class EmailAddressParser
   end
   
   def parse
-    if email.include?(", ")
-    address = email.split(", ").uniq
-  elsif email.include?(" ")
-    address = email.split(" ").uniq
-  else
-    address = email.split(" ").uniq
-    new_addresses = address.split(", ")
-  end  
+   address = email.split(/, |\s/).uniq
+   
   end
 end
 
